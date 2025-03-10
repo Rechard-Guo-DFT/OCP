@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dft-ms-coreservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dft-ms-coreservice
+  template:
+    metadata:
+      labels:
+        app: dft-ms-coreservice
+    spec:
+      containers:
+      - image: 'image-registry.openshift-image-registry.svc:5000/dft-ms/dft-ms-coreservice'
+        name: dft-ms-coreservice
+        env:
+          - name: TZ
+            value: "Asia/Singapore"
+          - name: JAVA_OPTS
+            value: >
+              -Xms2048m -Xmx2048m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m
+              -Djava.net.preferIPv4Stack=true 
+              -Djboss.modules.system.pkgs=$JBOSS_MODULES_SYSTEM_PKGS -Djava.awt.headless=true
+              -Dspring.profiles.active=ocp
+        envFrom:
+          - configMapRef:
+              name: sparkdb-config
+        #cmd: ["/opt/eap/bin/standalone.sh", "-Dspring.profiles.active=xmocp", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
+        ports:
+        - containerPort: 8080
+        - containerPort: 9443
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    app: dft-ms-coreservice
+  labels:
+    app: dft-ms-coreservice
+  name: dft-ms-coreservice
+spec:
+  ports:
+  - name: 8080-tcp
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  - name: 9443-tcp
+    port: 9443
+    protocol: TCP
+    targetPort: 9443
+  selector:
+    app: dft-ms-coreservice
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sparkdb-config
+data:
+  db.host: "192.168.1.108"
+  db.port: "3307"
+  db.user.name: "root"
+  db.user.password: "devuser"

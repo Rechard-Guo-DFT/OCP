@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by S1 (S1 Corporation) -->
+<!DOCTYPE jboss-web PUBLIC "-//JBoss//DTD Web Application 2.3V2//EN" "http://www.jboss.org/j2ee/dtd/jboss-web_5_0.dtd">
+<jboss-web>
+    <context-root>test-web</context-root>
+ </jboss-web>

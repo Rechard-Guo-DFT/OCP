@@ -1,0 +1,600 @@
+idealx:
+  ocpSwitch: false
+  operations:
+    #This is for all operation where AUTH Level required to check. These are all api can be accessed by 1FA and 2FA
+    operationAuthCheck: updateFirstVisit,getIdealxLoginUserInfo,getUserInfo,loadMenu,loadMastheadMenu,getInitDataForWidgets,initiateWebChat,getAcctBalanceWidget,recentPayment,fetchPendingItems,searchFXRateList,getCmpInfo,searchFXContractList,searchFixedDepositList,fetchLoanInquiryList,saveUserWidgets,updateWidgets,getPromoList,markAsRead,submitCMPFeedback,getBasicUserInfo,getInitwidgetsForBasicUser,refreshSession,loginOtp,loadBasicMenu,loadBasicMastheadMenu,searchPriceAlertList,createPriceAlert,deletePriceAlert,getLO,LOAcceptanceStatus,callDoxaCustInfo,dbs/page/visit,productEnquiry,getApprovalItems,changeDefaultProfile,depositRateEnquiry,initOverview,getOverview,updateOverview,deleteOverview,getLMAccountLinkage,searchNAStructure,getNAStructure,getNALinkage,getNPDetail,getIODetailPage,getLMStructure,getLMLinkage,getLMLinkageDetail,validateLMSweeps,crateLMSweeps,processLMSweeps,rejectLMSweeps,deleteLMSweeps,getLMSweepsList,getDashboardMarketingMsg,getLMWorkFlowList
+    ## Below are the API calls for SOA side
+    getIdealxLoginUserInfo: idealx-common/getIdealxLoginUserInfo
+    getUserInfo: idealx-common/getUserInfo
+    getCompanyList: idealx-common/getCompanyList
+    validateLinkCompany: idealx-common/validateLinkCompany
+
+    #Balance
+    getInitDataForBalanceSearch: idealx-dashboard/getInitDataForBalanceSearch
+    searchBalanceList: idealx-dashboard/searchBalanceList
+    getAcctBalanceWidget: idealx-dashboard/getAcctBalanceWidget
+    searchTotalAvailableBalance: idealx-dashboard/searchTotalAvailableBalance
+    getInitDataForActivitiesSearch: idealx-dashboard/getInitDataForActivitiesSearch
+    searchActivities: idealx-dashboard/searchActivities
+    downloadActivityReport: idealx-dashboard/downloadActivityReport
+    getAccountSummary: idealx-dashboard/getAccountSummary
+    getAccountActivityList: idealx-dashboard/getAccountActivityList
+    #widget
+    getInitDataForWidgets: idealx-dashboard/widgets/getInitDataForWidgets
+    saveUserWidgets: idealx-dashboard/widgets/saveUserWidgets
+    updateWidgets: idealx-dashboard/widgets/updateWidgets
+    #MyApproval
+    searchByTxnList: idealx-manage/searchByTxnList
+    getTabEntitlement: idealx-manage/getTabEntitlement
+    getInitDataForMyApprovalsSearch: idealx-manage/getInitDataForMyApprovalsSearch
+    approvePayments: idealx-manage/approvePayments
+    getInitDataByFileSearch: idealx-manage/getInitDataByFileSearch
+    searchByFileList: idealx-manage/searchByFileList
+    viewFile: idealx-manage/viewFile
+    viewPaymentDetail: idealx-manage/viewPaymentDetail
+    processFile: idealx-manage/processFile
+    checkAffectedBalance: idealx-manage/checkAffectedBalance
+    processSinglePayment: idealx-payments/processSinglePayment
+    rejectTransaction: idealx-payments/rejectTransaction
+    fetchPendingItems: idealx-dashboard/fetchPendingItems
+    calculateSummary: idealx-manage/calculateSummary
+    #Menu
+    loadMenu: idealx-dashboard/loadMenu
+    loadMastheadMenu: idealx-dashboard/loadMastheadMenu
+    #TransferCenter
+    getInitDataForTransferCenterSearch: idealx-manage/getInitDataForTransferCenterSearch
+    searchTransferList: idealx-manage/searchTransferList
+    getAvailableBalance: idealx-payments/getAvailableBalance
+    deleteMultiPayments: idealx-manage/deleteMultiPayments
+    getInitDataForGroup: idealx-manage/getInitDataForGroup
+    viewPayeeDetails: idealx-manage/viewPayeeDetails
+    searchByGroupList: idealx-manage/searchByGroupList
+    downLoadReport: idealx-manage/downLoadReport
+    recentPayment: idealx-common/recentPayment
+    getProcessingSchedule: idealx-payments/getProcessingSchedule
+    #ViewTransfer
+    viewPayment: idealx-manage/viewPayment
+    loadBulkLineItems: idealx-payments/loadBulkLineItems
+    downloadBulkLineRejectedItems: idealx-payments/downloadBulkLineRejectedItems
+    #Group
+    viewGroupDetail: idealx-manage/viewGroupDetail
+    viewGroup: idealx-manage/viewGroup
+    removeFromGroup: idealx-manage/removeFromGroup
+    editExistGroup: idealx-manage/editExistGroup
+    createGroupInit: idealx-manage/createGroupInit
+    createGroup: idealx-manage/createGroup
+    getExistGroup: idealx-manage/getExistGroup
+    processGroup: idealx-manage/processGroup
+    #Buy And Sell FX
+    searchFXRateList: idealx-dashboard/searchFXRateList
+    addCurrencyPair: idealx-dashboard/addCurrencyPair
+    viewAllBoardRates: idealx-dashboard/viewAllBoardRates
+    quoteFxRate: idealx-dashboard/quoteFxRate
+    bookFxRate: idealx-dashboard/bookFxRate
+    searchStaticData: idealx-dashboard/searchStaticData
+    updateHKTapiMessageCode: idealx-common/updateHKTapiMessageCode
+    #Payment
+    getDataByPmtType: idealx-payments/getDataByPmtType
+    authChallenge: idealx-common/authChallenge
+    validatePayment: idealx-payments/validatePayment
+    createPayment: idealx-payments/createPayment
+    getDisplayLink: idealx-payments/getDisplayLink
+    getDisclaimer: idealx-payments/getDisclaimer
+    boardRatesInq: idealx-payments/boardRatesInq
+    fxContractsInq: idealx-payments/fxContractsInq
+    countryListInq: idealx-payments/countryListInq
+    payeeListInq: idealx-payments/payeeListInq
+    modifyPayment: idealx-payments/modifyPayment
+    payeeBankInq: idealx-payments/payeeBankInq
+    getFixedRateQuote: idealx-payments/getFixedRateQuote
+    bookFixedRate: idealx-payments/bookFixedRate
+    updateFXContract: idealx-payments/updateFXContract
+    getInitDataForFXContractSearch: idealx-payments/getInitDataForFXContractSearch
+    searchFXContractList: idealx-payments/searchFXContractList
+    validatePayeeName: idealx-payments/validatePayeeName
+    getFDTermsAndConditions: idealx-payments/getFDTermsAndConditions
+    getFixedDepositAccountList: idealx-payments/getFixedDepositAccountList
+    getFixedDepositPlmtInitData: idealx-payments/getFixedDepositPlmtInitData
+    getFixedDepositRateInfo: idealx-payments/getFixedDepositRateInfo
+    searchFixedDepositList: idealx-manage/searchFixedDepositList
+    getInitDataForFixedDepositSearch: idealx-manage/getInitDataForFixedDepositSearch
+    checkOpenFDAcctStatus: idealx-payments/checkOpenFDAcctStatus
+    getOpenFDAcctInitData: idealx-payments/getOpenFDAcctInitData
+    openFixedDepositAccount: idealx-payments/openFixedDepositAccount
+    getRegulatoryFields: idealx-payments/getRegulatoryFields
+    savePayment: idealx-payments/savePayment
+    callCASProxy: idealx-payments/callCASProxy
+    judgePayeeHighRisk: idealx-payments/judgePayeeHighRisk
+    auditSuspiciousTransfer: idealx-payments/auditSuspiciousTransfer
+    getInitDataByBillPayment: idealx-payments/getInitDataByBillPayment
+    getCrsBrdInitData: idealx-payments/getCrsBrdInitData
+    getPrepaymentPackage: idealx-payments/getPrepaymentPackage
+    processPrepayment: idealx-payments/processPrepayment
+    #Digi
+    loadDigiDocOnboardInitData: idealx-payments/loadDigiDocOnboardInitData
+    loadDigiDocPayment: idealx-payments/loadDigiDocPayment
+    loadDigiDocPaymentInitData: idealx-payments/loadDigiDocPaymentInitData
+    postUploadSupportDoc: idealx-payments/postUploadSupportDoc
+    preUploadSupportDoc: idealx-payments/preUploadSupportDoc
+    uploadSupportDoc: idealx-payments/uploadSupportDoc
+    registerDigiDoc: idealx-payments/registerDigiDoc
+    approveITTPayment: idealx-payments/approveITTPayment
+    ottLimitCallPuPreview: idealx-payments/ottLimitCallPuPreview
+    ottLimitGenerate: idealx-payments/ottLimitGenerate
+    #Select Approver
+    getInitDataForSelectApprovers: idealx-payments/getInitDataForSelectApprovers
+    validateSelectedApprovers: idealx-payments/validateSelectedApprovers
+    submitSelectedApprovers: idealx-payments/submitSelectedApprovers
+    getInitDataForStopChequeSelectApprovers: idealx-payments/getInitDataForStopChequeSelectApprovers
+    validateStopChequeSelectedApprovers: idealx-payments/validateStopChequeSelectedApprovers
+    submitStopChequeSelectedApprovers: idealx-payments/submitStopChequeSelectedApprovers
+    #Payee
+    processBeneficiary: idealx-manage/processBeneficiary
+    viewBeneficiary: idealx-manage/viewBeneficiary
+    getInitDataForBeneficiarySearch: idealx-manage/getInitDataForBeneficiarySearch
+    searchBeneficiaryList: idealx-manage/searchBeneficiaryList
+    createBeneficiary: idealx-manage/createBeneficiary
+    getInitDataForBeneficiaryEdit: idealx-manage/getInitDataForBeneficiaryEdit
+    getFile: idealx-common/getFile
+    getNameEnquiry: idealx-manage/getNameEnquiry
+    addNationalId: idealx-manage/addNationalId
+    #CMP
+    getCmpInfo: idealx-common/getCmpInfo
+    submitCMPFeedback: idealx-common/submitCMPFeedback
+    getPromoList: idealx-common/getPromoList
+    markAsRead: idealx-common/markAsRead
+
+    checkEligibility: idealx-common/checkEligibility
+    productEnquiry: idealx-common/productEnquiry
+    acceptance: idealx-common/acceptance
+    getLoanOfferDetails: idealx-common/getLoanOfferDetails
+    reminder: idealx-common/reminder
+    saveForLater: idealx-common/saveForLater
+    getSaveDetails: idealx-common/getSaveDetails
+    getUserName: idealx-common/getUserName
+    evaluate: idealx-common/evaluate
+    #OneFALowUsr
+    getInitwidgetsForBasicUser: idealx-dashboard/getInitwidgetsForBasicUser
+    getBasicUserInfo: idealx-dashboard/getBasicUserInfo
+    #twoFA
+    loginOtp: idealx-dashboard/loginOtp
+    #total count
+    getMessageCount: idealx-dashboard/getMessageCount
+    mcaCopyAcct: idealx-common/mcaCopyAcct
+    #webChat
+    initiateWebChat: idealx-dashboard/initiateWebChat
+    #load basic user menu
+    loadBasicMenu: idealx-dashboard/loadBasicMenu
+    #load basic user masthead menu
+    loadBasicMastheadMenu: idealx-dashboard/loadBasicMastheadMenu
+    #refresh session for keepalive
+    refreshSession: idealx-dashboard/refreshSession
+    #Business Multiplier
+    businessMultiplier: idealx-dashboard/getInitDataForBusinessMultiplier
+    businessMultiplierEnrolledAccounts: idealx-dashboard/searchMultiplierAccountList
+    processTransactionCategory: idealx-dashboard/processTransactionCategory
+    #Fx Validation before submit
+    validateFXPayment: idealx-payments/validateFXPayment
+    getContextMessage: idealx-payments/getContextMessage
+    #payment report
+    viewPaymentReport: idealx-report/viewPaymentReport
+    modifyPaymentReport: idealx-report/modifyPaymentReport
+    deletePaymentReport: idealx-report/deletePaymentReport
+    generatePaymentReport: idealx-report/generatePaymentReport
+    searchPaymentReportList: idealx-report/searchPaymentReportList
+    initializePaymentReport: idealx-report/initializePaymentReport
+    createPaymentReport: idealx-report/createPaymentReport
+    generateEntitlementReport: idealx-report/generateEntitlementReport
+    #account report
+    getUserEmailList: idealx-report/getUserEmailList
+    searchAccountReportList: idealx-report/searchAccountReportList
+    loadPublishedReportList: idealx-report/loadPublishedReportList
+    initializeAccountReport: idealx-report/initializeAccountReport
+    createAccountReport: idealx-report/createAccountReport
+    modifyAccountReport: idealx-report/modifyAccountReport
+    deleteAccountReport: idealx-report/deleteAccountReport
+    viewAccountReport: idealx-report/viewAccountReport
+    generateAccountReport: idealx-report/generateAccountReport
+    generateFDReport: idealx-manage/generateFDReport
+    getMyProfileData: idealx-manage/getMyProfileData
+    generateBulkLineItemReport: idealx-report/generateBulkLineItemReport
+    generateReport: idealx-report/generateReport
+    #custom report
+    viewCustomReport: idealx-report/viewCustomReport
+    createCustomReport: idealx-report/createCustomReport
+    deleteCustomReport: idealx-report/deleteCustomReport
+    initializeCustomReport: idealx-report/initializeCustomReport
+    loadPublishedCustomReportList: idealx-report/loadPublishedCustomReportList
+    modifyCustomReport: idealx-report/modifyCustomReport
+    searchCustomReportList: idealx-report/searchCustomReportList
+    saveEmailAndSMSAlertDM: idealx-common/saveEmailAndSMSAlertDM
+    #DataExport report
+    viewDataExport: idealx-report/viewDataExport
+    createDataExport: idealx-report/createDataExport
+    deleteDataExport: idealx-report/deleteDataExport
+    initializeDataExport: idealx-report/initializeDataExport
+    generateDataExport: idealx-report/generateDataExport
+    modifyDataExport: idealx-report/modifyDataExport
+    searchDataExportList: idealx-report/searchDataExportList
+    #FileUpload report
+
+    createFileUploadReport: idealx-report/createFileUploadReport
+    initializeFileUploadReport: idealx-report/initializeFileUploadReport
+    generateFileUploadReport: idealx-report/generateFileUploadReport
+    searchFileUploadReportList: idealx-report/searchFileUploadReportList
+
+    # Admin Report
+    viewCompanySetupReport: idealx-report/viewCompanySetupReport
+    initializeUserSetupReport: idealx-report/initializeUserSetupReport
+    viewUserSetupReport: idealx-report/viewUserSetupReport
+    initializeUserLoginReport: idealx-report/initializeUserLoginReport
+    viewUserLoginReport: idealx-report/viewUserLoginReport
+    initializeUserAuditTrailReport: idealx-report/initializeUserAuditTrailReport
+    viewUserAuditTrailReport: idealx-report/viewUserAuditTrailReport
+    initializeScheduledEventsReport: idealx-report/initializeScheduledEventsReport
+    viewScheduledEventsReport: idealx-report/viewScheduledEventsReport
+    initializeIdealApprovalPolicySetupReport: idealx-report/initializeIdealApprovalPolicySetupReport
+    viewIdealApprovalPolicySetupReport: idealx-report/viewIdealApprovalPolicySetupReport
+    initAdminReport: idealx-report/initAdminReport
+
+    # oat report
+    searchOATReportList: idealx-report/searchOATReportList
+    getOATGeneratedReportList: idealx-report/getOATGeneratedReportList
+    initializeOATReport: idealx-report/initializeOATReport
+    createOATReport: idealx-report/createOATReport
+    deleteOATReport: idealx-report/deleteOATReport
+    modifyOATReport: idealx-report/modifyOATReport
+    viewOATReport: idealx-report/viewOATReport
+    generateOATReport: idealx-report/generateOATReport
+    loadSupChainFinReportList: idealx-report/loadSupChainFinReportList
+    getSupAdviceText: idealx-report/getSupAdviceText
+    downloadSFAdvice: idealx-report/downloadSFAdvice
+    #loan Inquiry
+    fetchLoanInquiryList: idealx-dashboard/fetchLoanInquiryList
+    searchPriceAlertList: idealx-dashboard/searchPriceAlertList
+    createPriceAlert: idealx-dashboard/createPriceAlert
+    deletePriceAlert: idealx-dashboard/deletePriceAlert
+    getLO: idealx-dashboard/getLO
+    LOAcceptanceStatus: idealx-dashboard/LOAcceptanceStatus
+    getApprovalItems: idealx-dashboard/getApprovalItems
+    #Account Estatements
+    getInitDataForAcctEstatements: idealx-manage/getInitDataForAcctEstatements
+    getAccountEstatementData: idealx-manage/getAccountEstatementData
+    getInitDataForLoanEstatements: idealx-manage/getInitDataForLoanEstatements
+    getLoanEstatementData: idealx-manage/getLoanEstatementData
+    getInitDataForFXEstatements: idealx-manage/getInitDataForFXEstatements
+    getFXEstatementData: idealx-manage/getFXEstatementData
+    #File Management
+    initializeUploadFile: idealx-manage/initializeUploadFile
+    submitUploadFile: idealx-manage/submitUploadFile
+    initializeUploadedFilesList: idealx-manage/initializeUploadedFilesList
+    searchUploadedFilesList: idealx-manage/searchUploadedFilesList
+    exportUploadedFilesListPDF: idealx-manage/exportUploadedFilesListPDF
+    viewUploadedFileErrors: idealx-manage/viewUploadedFileErrors
+    initializeRebatch: idealx-manage/initializeRebatch
+    submitRebatch: idealx-manage/submitRebatch
+    deleteTransactions: idealx-manage/deleteTransactions
+    deleteFile: idealx-manage/deleteFile
+    exportUploadedFileByFormat: idealx-manage/exportUploadedFileByFormat
+    searchDownloadFilesList: idealx-manage/searchDownloadFilesList
+    getInitDownloadFileCreate: idealx-manage/getInitDownloadFileCreate
+    submitDownloadFile: idealx-manage/submitDownloadFile
+    #File Exchange
+    initFileXCenter: idealx-manage/initFileXCenter
+    fileXUpload: idealx-manage/fileXUpload
+    fileXSearch: idealx-manage/fileXSearch
+    fileXApprove: idealx-manage/fileXApprove
+    fileXReject: idealx-manage/fileXReject
+    fileXDelete: idealx-manage/fileXDelete
+    fileXProcess: idealx-manage/fileXProcess
+    #Alert Management
+    searchAlertList: idealx-manage/searchAlertList
+    initializeAlert: idealx-manage/initializeAlert
+    createAlert: idealx-manage/createAlert
+    deleteAlert: idealx-manage/deleteAlert
+    modifyAlert: idealx-manage/modifyAlert
+    viewAlert: idealx-manage/viewAlert
+    contactListInq: idealx-manage/contactListInq
+    deleteContact: idealx-manage/deleteContact
+    editContact: idealx-manage/editContact
+    searchSecureMessages: idealx-manage/searchSecureMessages
+    searchAlertNotifications: idealx-manage/searchAlertNotifications
+    markMsgAsRead: idealx-manage/markMsgAsRead
+    deleteNotifications: idealx-manage/deleteNotifications
+    # R8.16 IDXP-948 merge alert
+    "[alert/list]": idealx-manage/alert/list
+    "[alert/view]": idealx-manage/alert/view
+    "[alert/init]": idealx-manage/alert/init
+    "[alert/create]": idealx-manage/alert/create
+    "[alert/modify]": idealx-manage/alert/modify
+    "[alert/delete]": idealx-manage/alert/delete
+
+    # LimitOrder
+    "[limitOrder/getLimitOrderList]": idealx-manage/limitOrder/getLimitOrderList
+    "[limitOrder/viewLimitOrder]": idealx-manage/limitOrder/viewLimitOrder
+    "[limitOrder/createLimitOrder]": idealx-manage/limitOrder/createLimitOrder
+    "[limitOrder/getIndicativeRate]": idealx-manage/limitOrder/getIndicativeRate
+    "[limitOrder/validateLimitOrder]": idealx-manage/limitOrder/validateLimitOrder
+    "[limitOrder/processLimitOrder]": idealx-manage/limitOrder/processLimitOrder
+    "[limitOrder/rejectLimitOrder]": idealx-manage/limitOrder/rejectLimitOrder
+    "[limitOrder/cancelLimitOrder]": idealx-manage/limitOrder/cancelLimitOrder
+    # cheque status
+    getInitDataForStopPaymentSearch: idealx-manage/getInitDataForStopPaymentSearch
+    getInitDataForChequeStuSearch: idealx-manage/getInitDataForChequeStuSearch
+    searchStopPaymentList: idealx-manage/searchStopPaymentList
+    searchChequeStuList: idealx-manage/searchChequeStuList
+    # stop cheque
+    getCreateStopPaymentInitData: idealx-payments/getCreateStopPaymentInitData
+    previewStopPayment: idealx-payments/previewStopPayment
+    createStopPayment: idealx-payments/createStopPayment
+    modifyStopPayment: idealx-payments/modifyStopPayment
+    viewStopPayment: idealx-payments/viewStopPayment
+    processStopPayment: idealx-payments/processStopPayment
+    # VN eTAX and eCustom
+    getCustomsTaxList: idealx-payments/getCustomsTaxList
+    getCorporateTaxList: idealx-payments/getCorporateTaxList
+    preConfirmCorporateTax: idealx-payments/preConfirmCorporateTax
+    preConfirmCustomsTax: idealx-payments/preConfirmCustomsTax
+    # Create and Manage Template
+    validateTemplate: idealx-payments/validateTemplate
+    createTemplate: idealx-payments/createTemplate
+    modifyTemplate: idealx-payments/modifyTemplate
+    viewTemplate: idealx-payments/viewTemplate
+    getInitDataForTemplateSearch: idealx-payments/getInitDataForTemplateSearch
+    searchTemplateList: idealx-payments/searchTemplateList
+    processTemplate: idealx-payments/processTemplate
+    # Contact Us
+    viewMessage: idealx-manage/viewMessage
+    deleteMessage: idealx-manage/deleteMessage
+    initializeReplyMessage: idealx-manage/initializeReplyMessage
+    replySubmit: idealx-manage/replySubmit
+    initializeMessage: idealx-manage/initializeMessage
+    createMessage: idealx-manage/createMessage
+    # itt enquiry
+    getInitDataForIncomingTransferEdit: idealx-payments/getInitDataForIncomingTransferEdit
+    submitIncomingTransfer: idealx-payments/submitIncomingTransfer
+    viewIncomingTransfer: idealx-payments/viewIncomingTransfer
+    incomingTransferList: idealx-payments/incomingTransferList
+    getInitDataForIncomingTransferSearch: idealx-payments/getInitDataForIncomingTransferSearch
+    viewIncomingTransferDetails: idealx-payments/viewIncomingTransferDetails
+    # loan
+    searchLoanAccountList: idealx-manage/searchLoanAccountList
+    getInitDataForLoanAccountSearch: idealx-manage/getInitDataForLoanAccountSearch
+    # Payment
+    getCnLimitInfo: idealx-payments/getCnLimitInfo
+    modifyCnLimitInfo: idealx-payments/modifyCnLimitInfo
+    processCnLimitInfo: idealx-payments/processCnLimitInfo
+    # partner bank
+    getPtnBnkInitData: idealx-payments/getPtnBnkInitData
+    getPtnBnkCountries: idealx-payments/getPtnBnkCountries
+    getPtnBnkAccounts: idealx-payments/getPtnBnkAccounts
+    getPtnBnkCurrencies: idealx-payments/getPtnBnkCurrencies
+    getPtnBnkPaymentTypes: idealx-payments/getPtnBnkPaymentTypes
+    # payNow File Enquiry
+    getPayNowFileEnquiryInitData: idealx-payments/getPayNowFileEnquiryInitData
+    acceptPayNowFileEnquiryFirstTime: idealx-payments/acceptPayNowFileEnquiryFirstTime
+    processPayNowEnqUploadFile: idealx-payments/processPayNowEnqUploadFile
+    searchPayNowEnqList: idealx-payments/searchPayNowEnqList
+    processPayNowFileEnquiry:
+      idealx-payments/processPayNowFileEnquiry
+      #onlineRoll
+    loadOnlineRollInitData: idealx-manage/loadOnlineRollInitData
+    loadOnlineRoll: idealx-manage/loadOnlineRoll
+    viewOnlineRollData: idealx-manage/viewOnlineRollData
+    processOnlineRollAction: idealx-manage/processOnlineRollAction
+    # resource center
+    searchResources: idealx-manage/searchResources
+    #Audit Confirmations
+    queryAdtConfirmList: idealx-manage/queryAdtConfirmList
+    initCreateRequest: idealx-manage/initCreateRequest
+    createRequest: idealx-manage/createRequest
+    getCutoffTime: idealx-payments/getCutoffTime
+    viewAdtConfirm: idealx-manage/viewAdtConfirm
+    processAdtConfirm: idealx-manage/processAdtConfirm
+    #[IDXP-1243]
+    getChargeFeesAcctList: idealx-manage/getChargeFeesAcctList
+    retrieveName: idealx-manage/retrieveName
+    #Stop Payment
+    initStopAndRecallPmt: idealx-payments/initStopAndRecallPmt
+    fetchStopPaymentEnquiry: idealx-payments/fetchStopPaymentEnquiry
+
+    #modifiedLog
+    getModifiedLog: idealx-payments/getModifiedLog
+    #Push Auth
+    cancelPushAuthReq: idealx-manage/cancelPushAuthReq
+
+    #invoiceNow
+    callDoxaCustInfo: idealx-common/callDoxaCustInfo
+
+    #DDA
+    "[dda/request/list]": idealx-payments/dda/request/list
+    "[dda/request/filters]": idealx-payments/dda/request/filters
+    "[dda/request/view]": idealx-payments/dda/request/view
+    "[dda/request/create]": idealx-payments/dda/request/create
+    "[dda/request/terminate]": idealx-payments/dda/request/terminate
+    "[dda/request/reject]": idealx-payments/dda/request/reject
+    "[dda/request/delete]": idealx-payments/dda/request/delete
+    "[dda/approval/list]": idealx-payments/dda/approval/list
+    "[dda/approval/approve]": idealx-payments/dda/approval/approve
+    "[dda/approval/approve/init]": idealx-payments/dda/approval/approve/init
+    "[dda/approval/challenge/send]": idealx-payments/dda/approval/challenge/send
+    "[dda/active/list]": idealx-payments/dda/active/list
+    "[dda/active/view]": idealx-payments/dda/active/view
+
+    checkUserExists: idealx-common/checkUserExists
+    verifyEmailMobile: idealx-common/verifyEmailMobile
+    updateUserInfoChallenge: idealx-common/updateUserInfoChallenge
+    updateUserInfoSAC: idealx-common/updateUserInfoSAC
+    getInitDataForDefaultSetting: idealx-common/getInitDataForDefaultSetting
+    changeDefaultProfile: idealx-common/changeDefaultProfile
+
+    # cash product bundle advice report
+    initCashBundleAdviceData: idealx-manage/initCashBundleAdviceData
+    getCashBundleAdviceData: idealx-manage/getCashBundleAdviceData
+    updateFirstVisit:
+      idealx-common/updateFirstVisit
+
+      #Recurring Payment
+    viewActiveRecurPayment: idealx-manage/viewActiveRecurPayment
+    recurPaymentActiveList: idealx-payments/recurPaymentActiveList
+    recurPaymentDuplicateCheck: idealx-payments/recurPaymentDuplicateCheck
+
+    #digitalCert
+    onlineDeclarationCheck: idealx-common/onlineDeclarationCheck
+    declarationDataQuery: idealx-common/declarationDataQuery
+    cbcChalkTransaction: idealx-common/cbcChalkTransaction
+    declarationHisDataQuery: idealx-common/declarationHisDataQuery
+    updatePurposeCode: idealx-common/updatePurposeCode
+    cbcChalkedQuery: idealx-common/cbcChalkedQuery
+    storeFrtwId: idealx-common/storeFrtwId
+    declarationDataListQuery: idealx-common/declarationDataListQuery
+    getInitDataForDeclarationRpt: idealx-common/getInitDataForDeclarationRpt
+
+    #bifast payment
+    verifyPayee: idealx-manage/verifyPayee
+
+    #new actBalance
+    getCompInfo: idealx-dashboard/getCompInfo
+
+    addBannerAudit: idealx-common/addBannerAudit
+
+    #Payee Upload
+    "[uploadPayeeFile]": idealx-manage/payee/file/upload
+    "[payee/file/list]": idealx-manage/payee/file/list
+    "[payee/file/list/init]": idealx-manage/payee/file/list/init
+    "[payee/file/errors]": idealx-manage/payee/file/errors
+    "[payee/file/approve]": idealx-manage/payee/file/approve
+    "[payee/file/reject]": idealx-manage/payee/file/reject
+    "[payee/file/download]": idealx-manage/payee/file/download
+    "[payee/file/download/init]": idealx-manage/payee/file/download/init
+
+    # idealx info density Checkbox setting Config
+    getInitSettingConfig: idealx-manage/getInitCheckbox
+    updateSettingConfig: idealx-manage/updateCheckbox
+
+    #ToolTip
+    "[dbs/page/visit]": idealx-manage/dbs/page/visit
+    "[dbs/page/tooltip/disable]": idealx-manage/dbs/page/tooltip/disable
+
+    #thirdparty platform
+    "[thirdpartyPlatform/initList]": idealx-payments/thirdpartyPlatform/initList
+    "[thirdpartyPlatform/list]": idealx-payments/thirdpartyPlatform/list
+    "[thirdpartyPlatform/view]": idealx-payments/thirdpartyPlatform/view
+    "[thirdpartyPlatform/initApprove]": idealx-payments/thirdpartyPlatform/initApprove
+    "[thirdpartyPlatform/sendChallenge]": idealx-payments/thirdpartyPlatform/sendChallenge
+    "[thirdpartyPlatform/approve]": idealx-payments/thirdpartyPlatform/approve
+    "[thirdpartyPlatform/reject]": idealx-payments/thirdpartyPlatform/reject
+    "[thirdpartyPlatform/reviewMultiApprove]": idealx-payments/thirdpartyPlatform/reviewMultiApprove
+    "[thirdpartyPlatform/multiApprove]": idealx-payments/thirdpartyPlatform/multiApprove
+    "[thirdpartyPlatform/pushApprove]": idealx-payments/thirdpartyPlatform/pushApprove
+
+    #Liquidity Management
+    getLMStructure: idealx-manage/liquidity/getLMStructure
+    getLMLinkage: idealx-manage/liquidity/getLMLinkage
+    getLMLinkageDetail: idealx-manage/liquidity/getLMLinkageDetail
+
+    validateLMSweeps: idealx-manage/liquidity/validateLMSweeps
+    crateLMSweeps: idealx-manage/liquidity/crateLMSweeps
+    viewLMSweeps: idealx-manage/liquidity/viewLMSweeps
+    modifyLMSweeps: idealx-manage/liquidity/modifyLMSweeps
+    processLMSweeps: idealx-manage/liquidity/processLMSweeps
+    rejectLMSweeps: idealx-manage/liquidity/rejectLMSweeps
+    deleteLMSweeps: idealx-manage/liquidity/deleteLMSweeps
+    getLMSweepsList: idealx-manage/liquidity/getLMSweepsList
+    getLMWorkFlowList: idealx-manage/liquidity/getLMWorkFlowList
+
+    getNAStructure: idealx-manage/liquidity/getNAStructure
+    getNALinkage: idealx-manage/liquidity/getNALinkage
+    getNPDetail: idealx-manage/liquidity/getNPDetail
+    getIODetailPage: idealx-manage/liquidity/getIODetailPage
+
+    initOverview: idealx-manage/liquidity/initOverview
+    getOverview: idealx-manage/liquidity/getOverview
+    updateOverview: idealx-manage/liquidity/updateOverview
+    deleteOverview: idealx-manage/liquidity/deleteOverview
+
+    generateBirtReport: I3BirtReports/frameset
+
+    getLMAccountLinkage: idealx-manage/liquidity/getLMAccountLinkage
+    searchNAStructure: idealx-manage/liquidity/searchNAStructure
+
+    #Payment MVP1
+    # getRecentChargeCode: idealx-payments/getRecentChargeCode
+    uploadMsgToApprDoc: idealx-payments/uploadMsgToApprDoc
+    viewMsgToApprDoc: idealx-payments/viewMsgToApprDoc
+    getMsgToApprDocInitData: idealx-payments/getMsgToApprDocInitData
+    shortCuts: idealx-payments/shortCuts
+    nextStep: idealx-payments/nextStep
+    getWorkFlowList: idealx-payments/getWorkFlowList
+
+    # IDXP-230 for fetch widget deposit rate
+    depositRateEnquiry: idealx-manage/depositRateEnquiry
+
+    getSecureFXRate: idealx-payments/getSecureFXRate
+    updateSecureFXRate: idealx-payments/updateSecureFXRate
+    validateSecureFXRate: idealx-payments/validateSecureFXRate
+
+    checkCanCreateBeneficiary: idealx-manage/checkCanCreateBeneficiary
+
+    # IDXP-178 SFS widgets
+    fetchSecuritiesApprovalItems: idealx-dashboard/fetchSecuritiesApprovalItems
+    fetchSecuritiesInfo: idealx-dashboard/fetchSecuritiesInfo
+
+    # idealx-investment
+    "[invest/getInvestmentList]": idealx-investment/getInvestmentList
+    "[invest/getInvestmentHistory]": idealx-investment/getInvestmentHistory
+    "[invest/getInvestmentFile]": idealx-investment/getInvestmentFile
+    "[invest/getInvestSummary]": idealx-investment/getInvestSummary
+    "[invest/getInvestProfile]": idealx-investment/getInvestProfile
+    "[invest/updateInvCustETag]": idealx-investment/updateInvCustETag
+    "[invest/getFundDetail]": idealx-investment/getFundDetail
+    "[invest/getBondDetail]": idealx-investment/getBondDetail
+    "[invest/transact/getFundList]": idealx-investment/transact/getFundList
+    "[invest/transact/getBondList]": idealx-investment/transact/getBondList
+    "[invest/transact/validateInvestment]": idealx-investment/transact/validateInvestment
+    "[invest/transact/createInvestment]": idealx-investment/transact/createInvestment
+    "[invest/transact/modifyInvestment]": idealx-investment/transact/modifyInvestment
+    "[invest/transact/viewInvestment]": idealx-investment/transact/viewInvestment
+    "[invest/transact/processInvestment]": idealx-investment/transact/processInvestment
+    "[invest/transact/getList]": idealx-investment/transact/getList
+    "[invest/transact/getFundFee]": idealx-investment/transact/getFundFee
+    "[invest/transact/getBondFee]": idealx-investment/transact/getBondFee
+    "[invest/transact/approveInvests]": idealx-investment/transact/approveInvests
+    "[invest/transact/getFundRegulatoryFee]": idealx-investment/transact/getFundRegulatoryFee
+    "[invest/transact/productEligibility]": idealx-investment/transact/productEligibility
+    "[invest/transact/getChargeAccounts]": idealx-investment/transact/getChargeAccounts
+
+    #IDXP-392
+    initDigitalExchangeTrade: idealx-manage/initDigitalExchangeTrade
+
+    # IDXP-244 IN TAX PAYMENT
+    inTaxDynamicField: idealx-payments/inTaxDynamicField
+
+    #IEBAA-2161 BIFAST-RFP
+    getBIFastRFPList: idealx-payments/bifast/rfp/getBIFastRFPList
+    rejectBIFastRFP: idealx-payments/bifast/rfp/rejectBIFastRFP
+    approvalBIFastRFP: idealx-payments/bifast/rfp/approvalBIFastRFP
+    viewBIFastRFP: idealx-payments/bifast/rfp/viewBIFastRFP
+
+    getInitDataForIDBillPayment: idealx-payments/getInitDataForIDBillPayment
+    verifyBill: idealx-payments/verifyBill
+    verifyBillerCode: idealx-payments/verifyBillerCode
+    getConfirmRate: idealx-payments/getConfirmRate
+    getGlobeSend: idealx-payments/getGlobeSend
+    checkSecureFXRateLimit: idealx-payments/checkSecureFXRateLimit
+
+    userIsSignerOrDirector: idealx-manage/userIsSignerOrDirector
+    
+    "[consentDataShare/list]": idealx-common/consentDataShare/list
+    "[consentDataShare/terminate]": idealx-common/consentDataShare/terminate
+    "[consentDataShare/view]": idealx-common/consentDataShare/view
+    
+    #IDXP-1492
+    "[marketingMessage/getMessage]": idealx-manage/marketingMessage/getMessage
+    "[marketingMessage/auditLog]": idealx-manage/marketingMessage/auditLog
+    
+    #IEBAA-3251 
+    getDashboardMarketingMsg: idealx-dashboard/getDashboardMarketingMsg
+
+    #IDXP-1426
+    validateEurIBAN: idealx-payments/validateEurIBAN

@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ocp-configserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ocp-configserver
+  template:
+    metadata:
+      labels:
+        app: ocp-configserver
+    spec:
+      containers:
+      - image: 'image-registry.openshift-image-registry.svc:5000/workshop/ocp-configserver:latest'
+        name: ocp-configserver
+        env:
+          - name: TZ
+            value: "Asia/Singapore"
+        cmd: ["java", "-Dspring.profiles.active=ocp -jar", "app.jar"]
+        ports:
+        - containerPort: 8888
+        volumeMounts:
+          - name: config-volume-supported-operations
+            mountPath: /config/SupportedOperations
+          - name: config-volume-supported-trade-operations
+            mountPath: /config/SupportedTradeOperations
+
+      volumes:
+        - name: config-volume-supported-operations
+          configMap:
+            name: ocp-configserver-cm-supportedoperations
+        - name: config-volume-supported-trade-operations
+          configMap:
+            name: ocp-configserver-cm-supportedtradeoperations
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    app: ocp-configserver
+  labels:
+    app: ocp-configserver
+  name: ocp-configserver
+spec:
+  ports:
+  - name: 8080-tcp
+    port: 8080
+    protocol: TCP
+    targetPort: 9999
+  selector:
+    app: ocp-configserver

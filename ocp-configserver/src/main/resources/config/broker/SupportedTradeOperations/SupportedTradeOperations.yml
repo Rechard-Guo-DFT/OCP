@@ -1,0 +1,98 @@
+idealx-trade:
+   operations:
+      #This is for all operation where AUTH Level required to check. These are all api can be accessed by 1FA and 2FA
+      operationAuthCheck: trade/widget/getTransactionsList,trade/approval/getApprovalCount
+
+      #For widget
+      "[trade/approval/getApprovalCount]": idealx-trade-web/approval/getApprovalCount
+      "[trade/widget/getTradeLimitList]": idealx-trade-web/widget/getTradeLimitList
+      "[trade/widget/getTransactionsList]": idealx-trade-web/widget/getTransactionsList
+
+      #For common
+      "[trade/common/getTdsRate]": idealx-trade-web/common/getTdsRate
+      "[trade/common/initTransactionsTab]": idealx-trade-web/common/initTransactionsTab
+      "[trade/common/getBankList]": idealx-trade-web/common/getBankList
+      "[trade/common/getIndicativeInterest]": idealx-trade-web/common/getIndicativeInterest
+
+      #For overview
+      "[trade/overview/getInitData]": idealx-trade-web/overview/getInitData
+
+      #For transactions
+      "[trade/transactions/getInitDataForTransaction]": idealx-trade-web/transactions/getInitDataForTransaction
+      "[trade/transactions/getTransactionList]": idealx-trade-web/transactions/getTransactionList
+
+      #For portfolio
+      "[trade/portfolio/getSummary]": idealx-trade-web/portfolio/getSummary
+      "[trade/portfolio/initDataForList]": idealx-trade-web/portfolio/initDataForList
+      "[trade/portfolio/getList]": idealx-trade-web/portfolio/getList
+      "[trade/portfolio/getRelatedList]": idealx-trade-web/portfolio/getRelatedList
+      "[trade/portfolio/getDetail]": idealx-trade-web/portfolio/getDetail
+      "[trade/portfolio/downloadAdvices]": idealx-trade-web/portfolio/downloadAdvices
+      
+      #For approval list
+      "[trade/approval/getInitDataForApproval]": idealx-trade-web/approval/getInitDataForApproval
+      "[trade/approval/getApprovalList]": idealx-trade-web/approval/getApprovalList
+      "[trade/approval/getApprovalSummary]": idealx-trade-web/approval/getApprovalSummary
+      "[trade/approval/downloadPDF]": idealx-trade-web/approval/downloadPDF
+
+      #For detail
+      "[trade/detail/getTransactionDetail]": idealx-trade-web/detail/getTransactionDetail
+      "[trade/detail/getWorkFlowList]": idealx-trade-web/detail/getWorkFlowList
+      "[trade/detail/viewDetail]": idealx-trade-web/detail/viewDetail
+
+      #For transaction create
+      "[trade/create/getInitDataForCreate]": idealx-trade-web/create/getInitDataForCreate
+      "[trade/create/getCopyPreviousList]": idealx-trade-web/create/getCopyPreviousList
+      "[trade/create/validateForCreateAmend]": idealx-trade-web/create/validateForCreateAmend
+      "[trade/create/review]": idealx-trade-web/create/review
+      "[trade/create/submit]": idealx-trade-web/create/submit
+      "[trade/create/saveAsDraft]": idealx-trade-web/create/saveAsDraft
+      "[trade/create/saveAsTemplate]": idealx-trade-web/create/saveAsTemplate
+
+      #For action
+      "[trade/action/rejectTransactions]": idealx-trade-web/action/rejectTransactions
+      "[trade/action/approveInit]": idealx-trade-web/action/approveInit
+      "[trade/action/cancelPushAuthReq]": idealx-trade-web/action/cancelPushAuthReq
+      "[trade/action/approveTransactions]": idealx-trade-web/action/approveTransactions
+      "[trade/action/deleteTransactions]": idealx-trade-web/action/deleteTransactions
+
+      #For template
+      "[trade/template/getUseTemplateList]": idealx-trade-web/template/getUseTemplateList
+
+      #For attachment
+      "[trade/attachment/getAttachmentDocumentList]": idealx-trade-web/attachment/getAttachmentDocumentList
+      "[trade/attachment/download]": idealx-trade-web/attachment/download
+      "[trade/attachment/upload]": idealx-trade-web/attachment/upload
+      "[trade/attachment/submit]": idealx-trade-web/attachment/submit
+      "[trade/attachment/uploadEmployeeFin]": idealx-trade-web/attachment/uploadEmployeeFin
+      "[trade/attachment/downloadFinNumber]": idealx-trade-web/attachment/downloadFinNumber
+      "[trade/attachment/downloadFinNumberTemplate]": idealx-trade-web/attachment/downloadFinNumberTemplate
+      "[trade/attachment/downloadEwbOrSliTemplate]": idealx-trade-web/attachment/downloadEwbOrSliTemplate
+      "[trade/attachment/uploadEwbOrSli]": idealx-trade-web/attachment/uploadEwbOrSli
+      "[trade/attachment/downloadErrorFile]": idealx-trade-web/attachment/downloadErrorFile
+
+      #For reminder
+      "[trade/reminder/initReminder]": idealx-trade-web/reminder/initReminder
+      "[trade/reminder/sendReminder]": idealx-trade-web/reminder/sendReminder
+
+      #For sampling check
+      "[trade/samplingCheck/initDataForList]": idealx-trade-web/samplingCheck/initDataForList
+      "[trade/samplingCheck/list]": idealx-trade-web/samplingCheck/list
+      "[trade/samplingCheck/attachedList]": idealx-trade-web/samplingCheck/attachedList
+      "[trade/samplingCheck/attachedDownload]": idealx-trade-web/samplingCheck/attachedDownload
+      "[trade/samplingCheck/detail]": idealx-trade-web/samplingCheck/detail
+      "[trade/samplingCheck/upload]": idealx-trade-web/samplingCheck/upload
+      "[trade/samplingCheck/submit]": idealx-trade-web/samplingCheck/submit
+      
+      #For report
+      "[trade/report/view]": idealx-trade-web/report/view
+      "[trade/report/download]": idealx-trade-web/report/download
+
+      # For OpenAccountTrade
+      "[trade/ioat/initForInstruments]": idealx-trade-web/ioat/initForInstruments
+      "[trade/ioat/getInstrumentList]": idealx-trade-web/ioat/getInstrumentList
+      "[trade/ioat/getInstrumentDetail]": idealx-trade-web/ioat/getInstrumentDetail
+      "[trade/ioat/initForTransactions]": idealx-trade-web/ioat/initForTransactions
+      "[trade/ioat/getTransactionList]": idealx-trade-web/ioat/getTransactionList
+      "[trade/ioat/getTransactionDetail]": idealx-trade-web/ioat/getTransactionDetail
+      "[trade/ioat/downloadAdvice]": idealx-trade-web/ioat/downloadAdvice

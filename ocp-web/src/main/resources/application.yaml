@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: broker
+  config:
+    import: optional:configserver:http://dft-ms-configserver-dft-ms.apps-crc.testing/ #optional:configserver:http://localhost:9999
+  cloud:
+    config:
+      name: SupportedOperations
+
+server:
+  port: 9990
+
+management:
+  server:
+    port: 9991
+  endpoints:
+    web:
+      exposure:
+        include: "*"
